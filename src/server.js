@@ -1,5 +1,5 @@
 const express = require('express')
-const quizzes = require('./mock/db.json')
+const request = require('./request/quiz')
 
 const start = async () => {
   const app = express()
@@ -15,37 +15,13 @@ const start = async () => {
     next()
   }
 
-  // TODO: create token, Create history
+  app.get('/getToken', request.getToken)
 
-  app.get('/getToken', (_, res) => {
-    res.send('sfsdfsdefdsf')
-  })
+  app.get('/quiz/:id', checkAuthorization, request.getQuiz)
 
-  app.get('/quiz/:id', checkAuthorization, (req, res) => {
-    const quiz = quizzes.data.find((x) => x.id == req.params.id)
+  app.get('/nextQuestion', checkAuthorization, request.getNextQuestion)
 
-    try {
-      // Get first question
-      const firstQuestion = quiz.questions[0]
-
-      // Create quiz history
-      const history = {}
-
-      // Save history to db
-
-      res.send(firstQuestion)
-    } catch (error) {
-      res.send('Specified question id does not exists.')
-    }
-  })
-
-  app.get('/nextQuestion', checkAuthorization, (req, res) => {
-    res.send('Te doy la siguiente pregunta')
-  })
-
-  app.post('/completeQuiz', checkAuthorization, (req, res) => {
-    res.send('Quiz completado!')
-  })
+  app.post('/completeQuiz', checkAuthorization, request.completeQuiz)
 
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
