@@ -2,12 +2,14 @@ const express = require('express')
 const config = require('./config')
 const connect = require('./db')
 const request = require('./request/quiz')
+const utils = require('./utils')
 
 const start = async () => {
   const app = express()
   const port = config.port
 
-  connect()
+  await connect()
+  await utils.populateDB()
 
   const checkAuthorization = (req, res, next) => {
     // Check token
