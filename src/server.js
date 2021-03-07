@@ -1,9 +1,10 @@
 const express = require('express')
+const config = require('./config')
 const request = require('./request/quiz')
 
 const start = async () => {
   const app = express()
-  const port = 3000
+  const port = config.port
 
   const checkAuthorization = (req, res, next) => {
     // Check token
