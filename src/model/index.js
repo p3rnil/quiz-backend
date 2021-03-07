@@ -1,4 +1,4 @@
-const quiz = require('./quiz')
-const question = require('./question')
+const Quiz = require('./quiz')
+const Question = require('./question')
 
-module.exports = { quiz, question }
+module.exports = { Quiz, Question }
