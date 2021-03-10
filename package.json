@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/index.js",
+    "devWin": "SET NODE_ENV=dev& nodemon src/index.js",
+    "dev": "NODE_ENV=dev nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.11.18"
+    "lodash": "^4.17.21",
+    "mongoose": "^5.11.19"
   }
 }

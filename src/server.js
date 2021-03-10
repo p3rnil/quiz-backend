@@ -1,36 +1,33 @@
 const express = require('express')
-const quizzes = require('./mock/db.json')
+const config = require('./config')
+const connect = require('./db')
+const request = require('./request/quiz')
+const utils = require('./utils')
 
 const start = async () => {
   const app = express()
-  const port = 3000
+  const port = config.port
 
-  // TODO: create token, Create history
-  app.get('/quiz/:id', (req, res) => {
-    const quiz = quizzes.data.find((x) => x.id == req.params.id)
+  await connect()
+  await utils.populateDB()
 
-    try {
-      // Get first question
-      const firstQuestion = quiz.questions[0]
-
-      // Create quiz history
-      const history = {}
-
-      // Save history to db
-
-      res.send(firstQuestion)
-    } catch (error) {
-      res.send('Specified question id does not exists.')
+  const checkAuthorization = (req, res, next) => {
+    // Check token
+    if (!req.headers.authorization) {
+      console.log('Not authorized')
+      return res.status(500).send('Not authorized')
     }
-  })
+    console.log('Authorized')
+    next()
+  }
 
-  app.get('/nextQuestion', (req, res) => {
-    res.send('Te doy la siguiente pregunta')
-  })
+  app.get('/getToken', request.getToken)
 
-  app.post('/completeQuiz', (req, res) => {
-    res.send('Quiz completado!')
-  })
+  app.get('/quiz/:id', checkAuthorization, request.getQuiz)
+
+  app.get('/nextQuestion', checkAuthorization, request.getNextQuestion)
+
+  app.post('/completeQuiz', checkAuthorization, request.completeQuiz)
 
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
