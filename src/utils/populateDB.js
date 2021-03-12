@@ -2,6 +2,8 @@ const models = require('../model')
 
 const populateDB = async () => {
   const questionA = {
+    info:
+      'To start, we just need some information about yourself. Please, mark the appropriate answers',
     name: 'Question A',
     type: 'checkbox',
     question: 'What is your gender?',
@@ -64,6 +66,8 @@ const populateDB = async () => {
   const questionAddedF = await models.Question.create(questionF)
 
   const questionG = {
+    info:
+      'To answer the questionnaire, you should focus on one of the courses you teach. Ideally, you should focus on a course in which you have participated in preparing or improving the teaching material. It is best if you focus on a course that you have the position to improve.',
     name: 'Question G',
     type: 'checkbox',
     question: 'Which is the name of the course that you teach?',
@@ -283,6 +287,8 @@ const populateDB = async () => {
   const questionAddedW = await models.Question.create(questionW)
 
   const questionX = {
+    info:
+      'For this question, better if  you have a list of the references used in your course at hand before proceeding',
     name: 'Question X',
     type: 'checkbox',
     question:
@@ -354,6 +360,8 @@ const populateDB = async () => {
   const questionAddedCD = await models.Question.create(questionCD)
 
   const questionDE = {
+    info:
+      'Please, indicate how much do you agree with the following statements about your teaching practices:',
     name: 'Question DE',
     type: 'checkbox',
     question:
@@ -518,6 +526,8 @@ const populateDB = async () => {
   const questionAddedTU = await models.Question.create(questionTU)
 
   const questionUV = {
+    info:
+      'Please, answer the following questions regarding your evaluation practices',
     name: 'Question UV',
     type: 'checkbox',
     question:
@@ -560,6 +570,8 @@ const populateDB = async () => {
   const questionAddedXY = await models.Question.create(questionXY)
 
   const questionYZ = {
+    info:
+      'You responded that your course is related to Limnology (i.e., courses on Limnology, Ecology, Hydrology, Water Resources, River Restoration, Aquatic Biogeochemistry, etc.). Please, answer the following questions regarding teaching a course related to Limnology. Limnologists are considered those with their main research field in freshwaters.',
     name: 'Question YZ',
     type: 'checkbox',
     question:
