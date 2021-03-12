@@ -427,6 +427,165 @@ const populateDB = async () => {
   }
   const questionAddedHI = await models.Question.create(questionHI)
 
+  const questionIJ = {
+    name: 'Question IJ',
+    type: 'checkbox',
+    question:
+      'I use gender-neutral language (i.e., language that avoids bias towards a particular social gender. In English, this includes use of nouns that are not gender-specific to refer to roles or professions, formation of phrases in a coequal manner, and discontinuing the blanket use of male terms)',
+    answers: [
+      'Strongly disagree',
+      'Disagree',
+      'Neither agree nor disagree',
+      'Agree',
+      'Strongly agree',
+    ],
+  }
+  const questionAddedIJ = await models.Question.create(questionIJ)
+
+  const questionJQ = {
+    name: 'Question JQ',
+    type: 'checkbox',
+    question:
+      'I actively avoid using gender stereotypical remarks during my classes.',
+    answers: [
+      'Strongly disagree',
+      'Disagree',
+      'Neither agree nor disagree',
+      'Agree',
+      'Strongly agree',
+    ],
+  }
+  const questionAddedJQ = await models.Question.create(questionJQ)
+
+  const questionQR = {
+    name: 'Question QR',
+    type: 'checkbox',
+    question:
+      'When teaching about a concept, I highlight who coined that concept (i.e. I present a direct link to the students between the concept and the researcher that developed it)?',
+    answers: [
+      'Strongly disagree',
+      'Disagree',
+      'Neither agree nor disagree',
+      'Agree',
+      'Strongly agree',
+    ],
+  }
+  const questionAddedQR = await models.Question.create(questionQR)
+
+  const questionRS = {
+    name: 'Question RS',
+    type: 'checkbox',
+    question:
+      'When sharing the research of female researchers with my students, I highlight that these scientific contributions were made by women.',
+    answers: [
+      'Strongly disagree',
+      'Disagree',
+      'Neither agree nor disagree',
+      'Agree',
+      'Strongly agree',
+    ],
+  }
+  const questionAddedRS = await models.Question.create(questionRS)
+
+  const questionST = {
+    name: 'Question ST',
+    type: 'checkbox',
+    question:
+      'When sharing the research of people belonging to minorities that have been historically excluded from academia for reasons besides their gender identity (i.e. LGBT+ people, racialized people, or people with functional diversity), I highlight that these scientific contributions were made by researchers belonging to those minorities.',
+    answers: [
+      'Strongly disagree',
+      'Disagree',
+      'Neither agree nor disagree',
+      'Agree',
+      'Strongly agree',
+    ],
+  }
+  const questionAddedST = await models.Question.create(questionST)
+
+  const questionTU = {
+    name: 'Question TU',
+    type: 'checkbox',
+    question:
+      'When sharing the research of female researchers, I invite my students to reflect upon gender bias in academia.',
+    answers: [
+      'Strongly disagree',
+      'Disagree',
+      'Neither agree nor disagree',
+      'Agree',
+      'Strongly agree',
+    ],
+  }
+  const questionAddedTU = await models.Question.create(questionTU)
+
+  const questionUV = {
+    name: 'Question UV',
+    type: 'checkbox',
+    question:
+      'Do the students sign their final exam (i.e. most important exercise for evaluation) with full name (first and last name) or with their student/personal ID?',
+    answers: [
+      'They use their full name',
+      'They use their student/personal ID',
+      'We use a different system',
+    ],
+  }
+  const questionAddedUV = await models.Question.create(questionUV)
+
+  const questionUW = {
+    name: 'Question UW',
+    type: 'checkbox',
+    question:
+      'You responded you use a different system, do you use an alpha-numerical code that does not allow you to identify the student while reviewing?',
+    answers: ['Yes', 'No', 'I do not know'],
+    dependencyQuestion: questionAddedUV._id,
+    dependencyAnswer: 'We use a different system',
+  }
+  await models.Question.create(questionUW)
+
+  const questionWX = {
+    name: 'Question WX',
+    type: 'checkbox',
+    question:
+      'Do you use gender-disaggregated data to measure potential differences on your students’ performance by gender?',
+    answers: ['Yes', 'No', 'I do not know'],
+  }
+  const questionAddedWX = await models.Question.create(questionWX)
+
+  const questionXY = {
+    name: 'Question XY',
+    type: 'checkbox',
+    question:
+      'When you detect a certain level of self-bias related to gender, you ask other colleagues for their opinion?',
+    answers: ['Yes', 'No', 'I do not know'],
+  }
+  const questionAddedXY = await models.Question.create(questionXY)
+
+  const questionYZ = {
+    name: 'Question YZ',
+    type: 'checkbox',
+    question:
+      'Please, write the names of three MALE limnologists whose research work you use in this course.',
+    answers: [], //3 TEXT BOXES
+  }
+  const questionAddedYZ = await models.Question.create(questionYZ)
+
+  const questionZZ = {
+    name: 'Question ZZ',
+    type: 'checkbox',
+    question:
+      'Please, write the names of three FEMALE limnologists whose research work you use in this course',
+    answers: [], //3 TEXT BOXES
+  }
+  const questionAddedZZ = await models.Question.create(questionZZ)
+
+  const question40 = {
+    name: 'Question 40',
+    type: 'checkbox',
+    question:
+      'Please, write here any other comment regarding this survey that you would like us to know',
+    answers: [], // TEXT BOX
+  }
+  const questionAdded40 = await models.Question.create(question40)
+
   const itemFound = await models.Question.find({ name: 'Question' })
     .populate('dependencyQuestion')
     .lean()
