@@ -56,7 +56,14 @@ const populateDB = async () => {
     },
   ]
 
-  await models.Question.create(questions)
+  const questionsMongo = await models.Question.create(questions)
+
+  const quiz = {
+    name: 'First quiz',
+    question: questionsMongo.map((x) => x._id),
+  }
+
+  await models.Quiz.create(quiz)
 
   // const itemFound = await models.Question.find({ name: 'Question' })
   //   .populate('dependencyQuestion')
