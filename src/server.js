@@ -9,6 +9,7 @@ const start = async () => {
   const port = config.port
 
   await connect()
+  await utils.truncateDB()
   await utils.populateDB()
 
   const checkAuthorization = (req, res, next) => {
