@@ -1,22 +1,32 @@
-const quizzes = require('../mock/db.json')
+const models = require('../model')
 
 const getToken = (_, res) => {
   res.send('sfsdfsdefdsf')
 }
 
-const getQuiz = (req, res) => {
-  const quiz = quizzes.data.find((x) => x.id == req.params.id)
+const getQuiz = async (req, res) => {
+  const foundQuiz = await models.Quiz.findOne({
+    name: req.params.name,
+    'question.0': { $exists: true },
+  })
 
   try {
     // Get first question
-    const firstQuestion = quiz.questions[0]
+    if (foundQuiz) {
+      const quizPopulated = await foundQuiz
+        .populate('question.0')
+        .execPopulate()
+      const result = quizPopulated.question[0]
 
-    // Create quiz history
-    const history = {}
+      // Create quiz history
+      const history = {}
 
-    // Save history to db
+      // Save history to db
 
-    res.send(firstQuestion)
+      res.send(result)
+    } else {
+      res.status(404).send('This quiz has not associated questions.')
+    }
   } catch (error) {
     res.send('Specified question id does not exists.')
   }

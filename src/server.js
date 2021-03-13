@@ -24,7 +24,7 @@ const start = async () => {
 
   app.get('/getToken', request.getToken)
 
-  app.get('/quiz/:id', checkAuthorization, request.getQuiz)
+  app.get('/quiz/:name', checkAuthorization, request.getQuiz)
 
   app.get('/nextQuestion', checkAuthorization, request.getNextQuestion)
 
