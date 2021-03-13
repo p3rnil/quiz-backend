@@ -58,6 +58,11 @@ const populateDB = async () => {
 
   const questionsMongo = await models.Question.create(questions)
 
+  await models.Question.findOneAndUpdate(
+    { name: 'Q02' },
+    { dependencyQuestion: questionsMongo[0], dependencyAnswer: 'Male' }
+  )
+
   const quiz = {
     name: 'First quiz',
     question: questionsMongo.map((x) => x._id),

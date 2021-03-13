@@ -12,12 +12,14 @@ const start = async () => {
   await utils.truncateDB()
   await utils.populateDB()
 
+  // El context es el historial asociado al token de la sesion
   const checkAuthorization = (req, res, next) => {
     // Check token
     if (!req.headers.authorization) {
       console.log('Not authorized')
       return res.status(500).send('Not authorized')
     }
+    req.params.context = { quizName: 'First quiz' }
     console.log('Authorized')
     next()
   }
@@ -26,7 +28,11 @@ const start = async () => {
 
   app.get('/quiz/:name', checkAuthorization, request.getQuiz)
 
-  app.get('/nextQuestion', checkAuthorization, request.getNextQuestion)
+  app.get(
+    '/nextQuestion/:id/:answer',
+    checkAuthorization,
+    request.getNextQuestion
+  )
 
   app.post('/completeQuiz', checkAuthorization, request.completeQuiz)
 
