@@ -50,7 +50,7 @@ const getNextQuestion = async (req, res) => {
   let result = null
 
   // Get next question
-  while (!found && index < questionArray.length) {
+  while (!found && index < questionArray.length - 1) {
     if (!questionArray[index + 1].dependencyQuestion) {
       found = true
       result = questionArray[index + 1]
