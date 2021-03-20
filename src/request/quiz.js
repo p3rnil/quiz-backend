@@ -1,7 +1,9 @@
+const jwt = require('jsonwebtoken')
 const models = require('../model')
 
 const getToken = (_, res) => {
-  res.send('sfsdfsdefdsf')
+  const token = jwt.sign({}, process.env.SECRET)
+  res.send(token)
 }
 
 const getQuiz = async (req, res) => {
@@ -38,7 +40,6 @@ const getQuiz = async (req, res) => {
   }
 }
 
-// TODO: Hacer el historial
 const getNextQuestion = async (req, res) => {
   const { id, answer } = req.params
 

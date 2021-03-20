@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devWin": "SET NODE_ENV=dev& nodemon src/index.js",
-    "dev": "NODE_ENV=dev nodemon ./src/index.js",
+    "devWin": "SET SECRET=dev& SET NODE_ENV=dev& nodemon src/index.js",
+    "dev": "SECRET=dev NODE_ENV=dev nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

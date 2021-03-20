@@ -1,4 +1,5 @@
 const express = require('express')
+const jwt = require('jsonwebtoken')
 const config = require('./config')
 const connect = require('./db')
 const request = require('./request/quiz')
@@ -13,12 +14,19 @@ const start = async () => {
   await utils.populateDB()
 
   const checkAuthorization = (req, res, next) => {
-    // Check token
-    if (!req.headers.authorization) {
-      console.log('Not authorized')
+    try {
+      // Check token
+      if (!req.headers.authorization) {
+        return res.status(500).send('Not authorized')
+      }
+
+      // Validate token
+      jwt.verify(req.headers.authorization, process.env.SECRET)
+    } catch (err) {
+      console.log(err.message)
       return res.status(500).send('Not authorized')
     }
-    console.log('Authorized')
+
     next()
   }
 
