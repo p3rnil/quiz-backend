@@ -70,12 +70,12 @@ const populateDB = async () => {
 
   const quizMongo = await models.Quiz.create(quiz)
 
-  await models.History.create({
-    idQuiz: quizMongo._id,
-    persistent: false,
-    token: 'sfsdfsdefdsf',
-    questions: [{ id: questionsMongo[0], answer: 'Female' }],
-  })
+  // await models.History.create({
+  //   idQuiz: quizMongo._id,
+  //   persistent: false,
+  //   token: 'sfsdfsdefdsf',
+  //   questions: [{ id: questionsMongo[0], answer: 'Female' }],
+  // })
 
   // const itemFound = await models.Question.find({ name: 'Question' })
   //   .populate('dependencyQuestion')
