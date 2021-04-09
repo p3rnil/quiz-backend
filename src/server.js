@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const config = require('./config')
 const connect = require('./db')
@@ -7,6 +8,7 @@ const utils = require('./utils')
 
 const start = async () => {
   const app = express()
+  app.use(cors())
   const port = config.port
 
   await connect()
