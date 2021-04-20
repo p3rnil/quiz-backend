@@ -5,10 +5,6 @@ const questionSchema = new mongoose.Schema(
     name: {
       type: String,
     },
-    type: {
-      type: String,
-      required: true,
-    },
     question: {
       type: String,
       required: true,
@@ -18,6 +14,17 @@ const questionSchema = new mongoose.Schema(
         type: String,
       },
     ],
+    answerInfo: {
+      types: [{ type: String, required: true }],
+      validation: {
+        max: {
+          type: Number,
+        },
+      },
+      label: {
+        type: String,
+      },
+    },
     dependencyQuestion: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'question',

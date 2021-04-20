@@ -64,29 +64,29 @@ const getNextQuestion = async (req, res) => {
     let index = questionArray.findIndex((x) => x._id == id)
     const currentQuestion = questionArray[index]
     let found = false
+    let isFirst = true
     let result = null
 
     // Get next question
     while (!found && index < questionArray.length - 1) {
-      if (!questionArray[index + 1].dependencyQuestion) {
-        found = true
+      if (isFirst && !questionArray[index + 1].dependencyQuestion) {
         result = questionArray[index + 1]
-      } else {
+        isFirst = false
+      } else if (questionArray[index + 1].dependencyQuestion) {
         if (
           questionArray[index + 1].dependencyQuestion.equals(
             currentQuestion._id
           ) &&
           questionArray[index + 1].dependencyAnswer == answer
         ) {
-          found = true
           result = questionArray[index + 1]
+          found = true
         }
       }
       index++
     }
 
     result = await models.Question.findById(result._id)
-
     res.send(result)
   } catch (error) {
     res.status(500).send(error.message)
