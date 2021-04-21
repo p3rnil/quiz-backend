@@ -681,6 +681,11 @@ const populateDB = async () => {
 
   await models.Question.findOneAndUpdate(
     { name: 'Q013' },
+    { dependencyQuestion: questionsMongo[8], dependencyAnswer: 'Yes' }
+  )
+
+  await models.Question.findOneAndUpdate(
+    { name: 'Q013' },
     { dependencyQuestion: questionsMongo[12], dependencyAnswer: 'Yes' }
   )
 
@@ -710,9 +715,17 @@ const populateDB = async () => {
   )
 
   await models.Question.findOneAndUpdate(
-    { name: 'Q042' },
+    { name: 'Q045' },
     {
-      dependencyQuestion: questionsMongo[41],
+      dependencyQuestion: questionsMongo[8],
+      dependencyAnswer: 'We use a different system',
+    }
+  )
+
+  await models.Question.findOneAndUpdate(
+    { name: 'Q046' },
+    {
+      dependencyQuestion: questionsMongo[8],
       dependencyAnswer: 'We use a different system',
     }
   )
