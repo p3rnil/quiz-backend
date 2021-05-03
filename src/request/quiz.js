@@ -76,11 +76,15 @@ const getNextQuestion = async (req, res) => {
         if (
           questionArray[index + 1].dependencyQuestion.equals(
             currentQuestion._id
-          ) &&
-          questionArray[index + 1].dependencyAnswer == answer
+          )
         ) {
-          result = questionArray[index + 1]
-          found = true
+          if (
+            questionArray[index + 1].dependencyAnswer == answer ||
+            (questionArray[index + 1].dependencyAnswer == '1>' && answer > 1)
+          ) {
+            result = questionArray[index + 1]
+            found = true
+          }
         }
       }
       index++

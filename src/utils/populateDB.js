@@ -45,7 +45,7 @@ const populateDB = async () => {
       question:
         'Do you belong to any underrepresented minority group in academia? Select all that qualify.',
       answers: [
-        'Race / ethnic minority',
+        'Race or ethnic minority',
         'LGBT + (lesbian, gay, bisexual, trans)',
         'People with disabilities',
         '', //MIXTO
@@ -134,7 +134,7 @@ const populateDB = async () => {
     {
       name: 'Q09',
       question:
-        'Do you develop your research activity in the field of limnology or related sciences (e.g. hydrology, freshwater sciences)?.',
+        'Do you develop your research activity in the field of limnology or related sciences (e.g. hydrology, freshwater sciences)?',
       answers: ['Yes, mainly', 'Yes, partially', 'No', 'I am not a researcher'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
@@ -170,7 +170,7 @@ const populateDB = async () => {
     {
       name: 'Q013',
       question:
-        'You responded that you use policy guidelines to reduce gender bias in teaching. Which of the following options better describes the institution that developed them?.',
+        'You responded that you use policy guidelines to reduce gender bias in teaching. Which of the following options better describes the institution that developed them?',
       answers: [
         'The university where I teach this course',
         'Another university',
@@ -229,7 +229,7 @@ const populateDB = async () => {
     {
       name: 'Q016',
       question:
-        'You responded that you do not teach any of the previous concepts in the course.  Have you considered teaching them in the course?.',
+        'You responded that you do not teach any of the previous concepts in the course.  Have you considered teaching them in the course?',
       answers: [
         'I have considered teaching at least one of these concepts in the course',
         'I have not considered teaching them in the course but now I think I will',
@@ -243,7 +243,7 @@ const populateDB = async () => {
     },
     {
       name: 'Q017',
-      question: 'How many people teach the course this year?.',
+      question: 'How many people teach the course this year?',
       answers: [],
       answerInfo: {
         label: 'People',
@@ -256,7 +256,7 @@ const populateDB = async () => {
     {
       name: 'Q018',
       question:
-        'What is the gender identity of the person who is responsible for the course?.',
+        'What is the gender identity of the person who is responsible for the course?',
       answers: ['Male', 'Female', 'Other gender identity', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox'],
@@ -266,7 +266,7 @@ const populateDB = async () => {
       //PREGUNTAR COMO VINCULARLAS
       name: 'Q019',
       question:
-        'What is the gender identity of the people who teach the theory lessons?.',
+        'What is the gender identity of the people who teach the theory lessons?',
       answers: [
         'Only men',
         'Mostly men (+ 60%)',
@@ -292,7 +292,7 @@ const populateDB = async () => {
       //PREGUNTAR COMO VINCULARLAS
       name: 'Q020',
       question:
-        'What is the gender identity of the people who teach the practical lessons?.',
+        'What is the gender identity of the people who teach the practical lessons?',
       answers: [
         'Only men',
         'Mostly men (+ 60%)',
@@ -317,7 +317,7 @@ const populateDB = async () => {
     {
       name: 'Q021',
       question:
-        'Have any of the people that teach the course this year a gender identity other than female or male?.',
+        'Have any of the people that teach the course this year a gender identity other than female or male?',
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
@@ -326,7 +326,7 @@ const populateDB = async () => {
     {
       name: 'Q022',
       question:
-        'Do you think there are gender biases in the research field associated with the course that you selected?.',
+        'Do you think there are gender biases in the research field associated with the course that you selected?',
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
@@ -335,7 +335,7 @@ const populateDB = async () => {
     {
       name: 'Q023',
       question:
-        'Regarding the course material, do you consider it is gender balanced (e.g., is there the same visibility for men and women researchers)?.',
+        'Regarding the course material, do you consider it is gender balanced (e.g., is there the same visibility for men and women researchers)?',
       answers: ['Yes', 'No', 'I don´t know / I didn’t think about it'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
@@ -344,7 +344,7 @@ const populateDB = async () => {
     {
       name: 'Q024', //23
       question:
-        'You responded that the course material is not gender balanced (e.g., that there is not the same visibility  for men and women researchers). Are you working to change that aspect of the course?.',
+        'You responded that the course material is not gender balanced (e.g., that there is not the same visibility  for men and women researchers). Are you working to change that aspect of the course?',
       answers: [
         'I am working to make it gender balanced',
         'I am planning to make it gender balanced, but I have not started yet',
@@ -358,7 +358,7 @@ const populateDB = async () => {
     {
       name: 'Q025',
       question:
-        'Regarding the literature you recommend for your course, do you provide full names (i.e. first and last name) of the authors?.',
+        'Regarding the literature you recommend for your course, do you provide full names (i.e. first and last name) of the authors?',
       answers: [
         'Yes',
         'No',
@@ -372,7 +372,7 @@ const populateDB = async () => {
     {
       name: 'Q026',
       question:
-        'Regarding the presentations you use for your course, do you provide full names (i.e. first and last name) of the first authors of the references used?.',
+        'Regarding the presentations you use for your course, do you provide full names (i.e. first and last name) of the first authors of the references used?',
       answers: [
         'Yes',
         'No',
@@ -388,7 +388,7 @@ const populateDB = async () => {
         'For this question, better if you have a list of the references used in your course at hand before proceeding.',
       name: 'Q027',
       question:
-        'Regarding the literature you recommend for your course, what is the gender identity of the first author (or single author) of the bibliographic references?.',
+        'Regarding the literature you recommend for your course, what is the gender identity of the first author (or single author) of the bibliographic references?',
       answers: [
         'All are men',
         'Mostly men (+ 60%)',
@@ -411,7 +411,7 @@ const populateDB = async () => {
     {
       name: 'Q028',
       question:
-        'During the preparation of the course, I included in the presentations used at least one concept developed by female researchers?.',
+        'During the preparation of the course, I included in the presentations used at least one concept developed by female researchers?',
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
@@ -529,7 +529,7 @@ const populateDB = async () => {
     {
       name: 'Q037',
       question:
-        'When teaching about a concept, I highlight who coined that concept (i.e. I present a direct link to the students between the concept and the researcher that developed it)?.',
+        'When teaching about a concept, I highlight who coined that concept (i.e. I present a direct link to the students between the concept and the researcher that developed it)?',
       answers: [
         'Strongly disagree',
         'Disagree',
@@ -591,7 +591,7 @@ const populateDB = async () => {
       info:
         'Please, answer the following questions regarding your evaluation practices',
       question:
-        'Do the students sign their final exam (i.e. most important exercise for evaluation) with full name (first and last name) or with their student/personal ID?.',
+        'Do the students sign their final exam (i.e. most important exercise for evaluation) with full name (first and last name) or with their student/personal ID?',
       answers: [
         'They use their full name',
         'They use their student/personal ID',
@@ -604,7 +604,7 @@ const populateDB = async () => {
     {
       name: 'Q042',
       question:
-        'You responded you use a different system, do you use an alpha-numerical code that does not allow you to identify the student while reviewing?.',
+        'You responded you use a different system, do you use an alpha-numerical code that does not allow you to identify the student while reviewing?',
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
@@ -696,17 +696,17 @@ const populateDB = async () => {
 
   await models.Question.findOneAndUpdate(
     { name: 'Q019' },
-    { dependencyQuestion: questionsMongo[17], dependencyAnswer: 'conditional' } //PREGUNTAR DEBE SER MAYOR QUE 1
+    { dependencyQuestion: questionsMongo[17], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1 17
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q020' },
-    { dependencyQuestion: questionsMongo[17], dependencyAnswer: 'conditional' } //PREGUNTAR DEBE SER MAYOR QUE 1
+    { dependencyQuestion: questionsMongo[17], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q021' },
-    { dependencyQuestion: questionsMongo[17], dependencyAnswer: 'conditional' } //PREGUNTAR DEBE SER MAYOR QUE 1
+    { dependencyQuestion: questionsMongo[17], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1
   )
 
   await models.Question.findOneAndUpdate(
