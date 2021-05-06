@@ -147,6 +147,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [100, 33, 33],
       },
     },
     {
@@ -156,6 +157,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [100, 33, 33],
       },
     },
     {
@@ -165,6 +167,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [100, 33, 33],
       },
     },
     {
@@ -215,6 +218,7 @@ const populateDB = async () => {
           'checkbox',
           'checkbox',
         ],
+        points: [25, 25, 25, 25, 25, 25, 25, 25],
       },
     },
     {
@@ -224,6 +228,7 @@ const populateDB = async () => {
       answers: ['Yes, I teach at least one of them', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [100, 0, 0],
       },
     },
     {
@@ -239,6 +244,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [68, 68, 33, 4, 33],
       },
     },
     {
@@ -330,6 +336,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [63, 20, 20],
       },
     },
     {
@@ -339,6 +346,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I don´t know / I didn’t think about it'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [63, 0, 0],
       },
     },
     {
@@ -353,6 +361,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [41, 20, 20, 0],
       },
     },
     {
@@ -367,6 +376,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [61, 20, 41, 41],
       },
     },
     {
@@ -381,6 +391,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [61, 20, 41, 41],
       },
     },
     {
@@ -406,6 +417,7 @@ const populateDB = async () => {
           'checkbox',
           'checkbox',
         ],
+        points: [21, 41, 61, 41, 20, 20],
       },
     },
     {
@@ -415,6 +427,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [61, 20, 41],
       },
     },
     {
@@ -424,6 +437,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [61, 20, 20],
       },
     },
     {
@@ -450,6 +464,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -480,6 +495,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -494,6 +510,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -509,6 +526,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -524,6 +542,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -539,6 +558,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -554,6 +574,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -584,6 +605,7 @@ const populateDB = async () => {
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
+        points: [8, 17, 25, 33, 42],
       },
     },
     {
@@ -617,6 +639,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [300, 100, 100],
       },
     },
     {
@@ -626,6 +649,7 @@ const populateDB = async () => {
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
+        points: [300, 100, 100],
       },
     },
     {

@@ -14,6 +14,10 @@ const historySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    total_points: {
+      type: Number,
+      default: 0,
+    },
     questions: [
       {
         id: {

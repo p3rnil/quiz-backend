@@ -49,9 +49,21 @@ const getNextQuestion = async (req, res) => {
       token: req.headers.authorization,
     })
 
+    // Sum points answer
+    const questionAnswered = await models.Question.findById(id)
+    let total_points = history.total_points
+
+    if (questionAnswered.answerInfo.points.length > 0) {
+      const indexQuestionAnswered = questionAnswered.answers.indexOf(answer)
+      const pointQuestionAnswered =
+        questionAnswered.answerInfo.points[indexQuestionAnswered]
+      total_points += pointQuestionAnswered
+    }
+
     // Save current question/answer
     await models.History.findByIdAndUpdate(history._id, {
       questions: [...history.questions, { id, answer }],
+      total_points: total_points,
     })
 
     const { question: questionArray } = await models.Quiz.findById(

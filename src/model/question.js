@@ -16,6 +16,7 @@ const questionSchema = new mongoose.Schema(
     ],
     answerInfo: {
       types: [{ type: String, required: true }],
+      points: [{ type: Number }],
       validation: {
         max: {
           type: Number,
