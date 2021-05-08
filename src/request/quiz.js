@@ -57,7 +57,7 @@ const getNextQuestion = async (req, res) => {
 
   try {
     // Get history
-    const history = await models.History.findOne({
+    let history = await models.History.findOne({
       token: req.headers.authorization,
     })
 
@@ -72,11 +72,21 @@ const getNextQuestion = async (req, res) => {
       total_points += pointQuestionAnswered
     }
 
+    let persistent = false
+    if (answer === 'I consent, I wish to participate in the study') {
+      persistent = true
+    }
+
     // Save current question/answer
-    await models.History.findByIdAndUpdate(history._id, {
-      questions: [...history.questions, { id, answer }],
-      total_points: total_points,
-    })
+    history = await models.History.findByIdAndUpdate(
+      history._id,
+      {
+        questions: [...history.questions, { id, answer }],
+        total_points: total_points,
+        persistent,
+      },
+      { new: true }
+    )
 
     const { question: questionArray } = await models.Quiz.findById(
       history.idQuiz
@@ -116,7 +126,7 @@ const getNextQuestion = async (req, res) => {
 
     if (!result) {
       // Remove history
-      if (history.persistent) {
+      if (!history.persistent) {
         await models.History.findByIdAndRemove(history._id)
       }
       res.send({ isEndQuiz: true })
