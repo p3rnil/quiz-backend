@@ -34,6 +34,8 @@ const start = async () => {
 
   app.get('/getToken', request.getToken)
 
+  app.get('/getTotalPoints', checkAuthorization, request.getTotalPoints)
+
   app.get('/quiz/:name', checkAuthorization, request.getQuiz)
 
   app.get(

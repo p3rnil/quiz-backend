@@ -6,6 +6,18 @@ const getToken = (_, res) => {
   res.send(token)
 }
 
+const getTotalPoints = async (req, res) => {
+  try {
+    const history = await models.History.findOne({
+      token: req.headers.authorization,
+    })
+
+    res.send({ total_points: history.total_points })
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
 const getQuiz = async (req, res) => {
   const foundQuiz = await models.Quiz.findOne({
     name: req.params.name,
@@ -102,8 +114,12 @@ const getNextQuestion = async (req, res) => {
       index++
     }
 
-    result = await models.Question.findById(result._id)
-    res.send(result)
+    if (!result) {
+      res.send({ isEndQuiz: true })
+    } else {
+      result = await models.Question.findById(result._id)
+      res.send(result)
+    }
   } catch (error) {
     res.status(500).send(error.message)
   }
@@ -113,4 +129,10 @@ const completeQuiz = (req, res) => {
   res.send('Quiz completado!')
 }
 
-module.exports = { getToken, getQuiz, getNextQuestion, completeQuiz }
+module.exports = {
+  getToken,
+  getQuiz,
+  getNextQuestion,
+  completeQuiz,
+  getTotalPoints,
+}
