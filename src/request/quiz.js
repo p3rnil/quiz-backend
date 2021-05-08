@@ -115,6 +115,10 @@ const getNextQuestion = async (req, res) => {
     }
 
     if (!result) {
+      // Remove history
+      if (history.persistent) {
+        await models.History.findByIdAndRemove(history._id)
+      }
       res.send({ isEndQuiz: true })
     } else {
       result = await models.Question.findById(result._id)
