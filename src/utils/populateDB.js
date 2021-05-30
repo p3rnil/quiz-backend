@@ -5,7 +5,7 @@ const populateDB = async () => {
     {
       name: 'Q00',
       question:
-        'You are invited to respond to this self-assessment questionnaire about the inclusion of the gender perspective on University teaching. The questionnaire includes aspects about self-awareness, teaching preparation, teaching practices, and evaluation practices. Based on your answers, the system will provide you with some general evaluation as well as guidance to improve the inclusion of the gender perspective on your teaching. The questionnaire will take approximately 10 minutes to complete.\n The questionnaire has been developed by the Gender &amp; Science Group of the Iberian Association of Limnology (AIL) and it is part of Gender-LimnoEdu, a project funded by the European Geophysical Union (EGU). If you have any questions about the questionnaire, please contact genderscienceail@gmail.com.\n Additionally, we would like to save your responses to include them in a research study about the inclusion of the gender perspective on teaching practices. To do so, we will ask you some basic demographic questions. This questionnaire is anonymous, and your responses will be kept completely confidential. Non-personally identifiable data will be collected and no one will be able to link your answers back to you. Participation in this research is completely voluntary. If you decide to participate, you may withdraw at any point during the study, for any reason, and without any prejudice. By clicking the "I consent, I wish to participate in the study" button below, you acknowledge that your participation in the study is voluntary, you are 18 years of age or older, and that you are aware that you may choose to terminate your participation in the study at any time and for any reason. If you prefer to not participate in the study, you can take the self-assessment questionnaire and your responses will not be saved in our server.',
+        'You are invited to respond to this self-assessment questionnaire about the inclusion of the gender perspective on University teaching. The questionnaire includes aspects about self-awareness, teaching preparation, teaching practices, and evaluation practices. Based on your answers, the system will provide you with some general evaluation as well as guidance to improve the inclusion of the gender perspective on your teaching. The questionnaire will take approximately 10 minutes to complete.\n The questionnaire has been developed by the Gender & Science Group of the Iberian Association of Limnology (AIL) and it is part of Gender-LimnoEdu, a project funded by the European Geophysical Union (EGU). If you have any questions about the questionnaire, please contact genderscienceail@gmail.com.\n Additionally, we would like to save your responses to include them in a research study about the inclusion of the gender perspective on teaching practices. To do so, we will ask you some basic demographic questions. This questionnaire is anonymous, and your responses will be kept completely confidential. Non-personally identifiable data will be collected and no one will be able to link your answers back to you. Participation in this research is completely voluntary. If you decide to participate, you may withdraw at any point during the study, for any reason, and without any prejudice. By clicking the "I consent, I wish to participate in the study" button below, you acknowledge that your participation in the study is voluntary, you are 18 years of age or older, and that you are aware that you may choose to terminate your participation in the study at any time and for any reason. If you prefer to not participate in the study, you can take the self-assessment questionnaire and your responses will not be saved in our server.',
       answers: [
         'I consent, I wish to participate in the study',
         'I do not wish to participate in the study but I want to take the self-assessment questionnaire',
@@ -66,7 +66,7 @@ const populateDB = async () => {
     },
     {
       name: 'Q04',
-      question: 'How many years have you teached university courses?',
+      question: 'How many years have you taught university courses?',
       answers: [],
       answerInfo: {
         label: 'Years',
@@ -104,7 +104,7 @@ const populateDB = async () => {
     {
       name: 'Q06',
       question: 'Are you responsible for any university course?',
-      answers: ['Yes', 'No', 'Not now, but I was it in the past'],
+      answers: ['Yes', 'No', 'Not now, but I did in the past'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
       },
@@ -118,7 +118,7 @@ const populateDB = async () => {
       answerInfo: {
         types: ['checkbox-text'],
         validation: {
-          max: 10,
+          max: 200,
         },
       },
     },
@@ -137,7 +137,7 @@ const populateDB = async () => {
         'Do you develop your research activity in the field of limnology or related sciences (e.g. hydrology, freshwater sciences)?',
       answers: ['Yes, mainly', 'Yes, partially', 'No', 'I am not a researcher'],
       answerInfo: {
-        types: ['checkbox', 'checkbox', 'checkbox'],
+        types: ['checkbox', 'checkbox', 'checkbox', 'checkbox'],
       },
     },
     {
@@ -239,8 +239,8 @@ const populateDB = async () => {
         'I have considered teaching at least one of these concepts in the course',
         'I have not considered teaching them in the course but now I think I will',
         'I think these concepts are not relevant for my course',
-        'I think these concepts should not be teached in any course',
-        'I am unsure / I don´t know',
+        'I think these concepts should not be taught in any course',
+        'I am unsure or I don´t know',
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
@@ -342,8 +342,8 @@ const populateDB = async () => {
     {
       name: 'Q023',
       question:
-        'Regarding the course material, do you consider it is gender balanced (e.g., is there the same visibility for men and women researchers)?',
-      answers: ['Yes', 'No', 'I don´t know / I didn’t think about it'],
+        'In your opinion, is the course material gender balanced? (e.g., there is the same visibility for men and women researchers).',
+      answers: ['Yes', 'No', 'I don´t know or I didn’t think about it'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
         points: [63, 0, 0],
@@ -386,7 +386,7 @@ const populateDB = async () => {
       answers: [
         'Yes',
         'No',
-        'I do not use presentations for my class / I do not include references on them',
+        'I do not use presentations for my class or I do not include references on them',
         'I do not know',
       ],
       answerInfo: {
@@ -613,10 +613,10 @@ const populateDB = async () => {
       info:
         'Please, answer the following questions regarding your evaluation practices',
       question:
-        'Do the students sign their final exam (i.e. most important exercise for evaluation) with full name (first and last name) or with their student/personal ID?',
+        'Do the students sign their final exam (i.e. most important exercise for evaluation) with full name (first and last name) or with their student or personal ID?',
       answers: [
         'They use their full name',
-        'They use their student/personal ID',
+        'They use their student or personal ID',
         'We use a different system',
       ],
       answerInfo: {
