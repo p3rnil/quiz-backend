@@ -56,11 +56,11 @@ const populateDB = async () => {
           'checkbox',
           'checkbox',
           'checkbox',
-          'checkbox-number',
+          'checkbox-text',
           'checkbox',
         ],
         validation: {
-          max: 10,
+          max: 200,
         },
       },
     },
@@ -739,10 +739,18 @@ const populateDB = async () => {
   )
 
   await models.Question.findOneAndUpdate(
+    { name: 'Q042' },
+    {
+      dependencyQuestion: questionsMongo[41],
+      dependencyAnswer: 'We use a different system',
+    }
+  )
+
+  await models.Question.findOneAndUpdate(
     { name: 'Q045' },
     {
       dependencyQuestion: questionsMongo[8],
-      dependencyAnswer: 'We use a different system',
+      dependencyAnswer: 'Yes',
     }
   )
 
@@ -750,7 +758,7 @@ const populateDB = async () => {
     { name: 'Q046' },
     {
       dependencyQuestion: questionsMongo[8],
-      dependencyAnswer: 'We use a different system',
+      dependencyAnswer: 'Yes',
     }
   )
 

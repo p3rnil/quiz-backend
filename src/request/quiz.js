@@ -35,7 +35,7 @@ const getQuiz = async (req, res) => {
       // Create quiz history
       const history = {
         idQuiz: quizPopulated._id,
-        persistent: false,
+        persistent: true,
         token: req.headers.authorization,
         questions: [],
       }
@@ -72,10 +72,10 @@ const getNextQuestion = async (req, res) => {
       total_points += pointQuestionAnswered
     }
 
-    let persistent = false
-    if (answer === 'I consent, I wish to participate in the study') {
-      persistent = true
-    }
+    // let persistent = false
+    // if (answer === 'I consent, I wish to participate in the study') {
+    //   persistent = true
+    // }
 
     // Save current question/answer
     history = await models.History.findByIdAndUpdate(
@@ -83,7 +83,7 @@ const getNextQuestion = async (req, res) => {
       {
         questions: [...history.questions, { id, answer }],
         total_points: total_points,
-        persistent,
+        // persistent,
       },
       { new: true }
     )
@@ -96,29 +96,45 @@ const getNextQuestion = async (req, res) => {
       .exec()
 
     let index = questionArray.findIndex((x) => x._id == id)
-    const currentQuestion = questionArray[index]
     let found = false
     let isFirst = true
     let result = null
 
+    // Primera pregunta
+    if (index === 0) {
+      while (!found && index < questionArray.length - 1) {
+        console.log(questionArray[index + 1].dependencyAnswer)
+        if (
+          questionArray[index + 1].dependencyQuestion &&
+          questionArray[index + 1].dependencyAnswer === answer
+        ) {
+          result = questionArray[index + 1]
+          found = true
+        }
+        index++
+      }
+    }
+
+    index = questionArray.findIndex((x) => x._id == id)
     // Get next question
     while (!found && index < questionArray.length - 1) {
       if (isFirst && !questionArray[index + 1].dependencyQuestion) {
         result = questionArray[index + 1]
         isFirst = false
+        found = true
       } else if (questionArray[index + 1].dependencyQuestion) {
-        if (
-          questionArray[index + 1].dependencyQuestion.equals(
-            currentQuestion._id
-          )
-        ) {
+        // Mirar el historial
+        let i = 0
+        while (!found && i < history.questions.length) {
+          const currentQuestionHistory = history.questions[i]
           if (
-            questionArray[index + 1].dependencyAnswer == answer ||
-            (questionArray[index + 1].dependencyAnswer == '1>' && answer > 1)
+            currentQuestionHistory.answer ===
+            questionArray[index + 1].dependencyAnswer
           ) {
             result = questionArray[index + 1]
             found = true
           }
+          i++
         }
       }
       index++
