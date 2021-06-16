@@ -101,18 +101,13 @@ const getNextQuestion = async (req, res) => {
     let result = null
 
     // Primera pregunta
-    if (index === 0) {
-      while (!found && index < questionArray.length - 1) {
-        console.log(questionArray[index + 1].dependencyAnswer)
-        if (
-          questionArray[index + 1].dependencyQuestion &&
-          questionArray[index + 1].dependencyAnswer === answer
-        ) {
-          result = questionArray[index + 1]
-          found = true
-        }
-        index++
-      }
+    if (
+      (index === 0) &
+      (answer ===
+        'I do not wish to participate in the study but I want to take the self-assessment questionnaire')
+    ) {
+      result = questionArray[7]
+      found = true
     }
 
     index = questionArray.findIndex((x) => x._id == id)
@@ -124,17 +119,36 @@ const getNextQuestion = async (req, res) => {
         found = true
       } else if (questionArray[index + 1].dependencyQuestion) {
         // Mirar el historial
-        let i = 0
-        while (!found && i < history.questions.length) {
-          const currentQuestionHistory = history.questions[i]
-          if (
-            currentQuestionHistory.answer ===
-            questionArray[index + 1].dependencyAnswer
-          ) {
-            result = questionArray[index + 1]
+        const idQuestionDependency = questionArray[index + 1].dependencyQuestion
+        const answerQuestionDependency =
+          questionArray[index + 1].dependencyAnswer
+        const foundQuestionHistory = history.questions.find((x) =>
+          x.id.equals(idQuestionDependency)
+        )
+
+        console.log(foundQuestionHistory)
+
+        if (!foundQuestionHistory) {
+          console.log(
+            'Entro pq no hemos encontrado la pregunta en el historial'
+          )
+          found = true
+          result = questionArray[index + 1]
+        } else {
+          if (foundQuestionHistory.answer === answerQuestionDependency) {
+            console.log(
+              'Entro pq hemos encontrado la pregunta en el historial y las respuestas coinciden'
+            )
+
             found = true
+            result = questionArray[index + 1]
+          } else if (
+            answerQuestionDependency === '1>' &&
+            foundQuestionHistory.answer > 1
+          ) {
+            found = true
+            result = questionArray[index + 1]
           }
-          i++
         }
       }
       index++

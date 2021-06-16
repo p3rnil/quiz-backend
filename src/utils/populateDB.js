@@ -695,20 +695,6 @@ const populateDB = async () => {
   const questionsMongo = await models.Question.create(questions)
 
   await models.Question.findOneAndUpdate(
-    { name: 'Q07' },
-    {
-      dependencyQuestion: questionsMongo[0],
-      dependencyAnswer:
-        'I do not wish to participate in the study but I want to take the self-assessment questionnaire',
-    }
-  )
-
-  await models.Question.findOneAndUpdate(
-    { name: 'Q013' },
-    { dependencyQuestion: questionsMongo[8], dependencyAnswer: 'Yes' }
-  )
-
-  await models.Question.findOneAndUpdate(
     { name: 'Q013' },
     { dependencyQuestion: questionsMongo[12], dependencyAnswer: 'Yes' }
   )
