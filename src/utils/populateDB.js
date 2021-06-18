@@ -240,7 +240,7 @@ const populateDB = async () => {
         'I have not considered teaching them in the course but now I think I will',
         'I think these concepts are not relevant for my course',
         'I think these concepts should not be taught in any course',
-        'I am unsure or I don´t know',
+        'I am unsure or I do not know',
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox', 'checkbox'],
@@ -343,7 +343,7 @@ const populateDB = async () => {
       name: 'Q023',
       question:
         'In your opinion, is the course material gender balanced? (e.g., there is the same visibility for men and women researchers).',
-      answers: ['Yes', 'No', 'I don´t know or I didn’t think about it'],
+      answers: ['Yes', 'No', 'I do not know or I did not think about it'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
         points: [63, 0, 0],
@@ -357,7 +357,7 @@ const populateDB = async () => {
         'I am working to make it gender balanced',
         'I am planning to make it gender balanced, but I have not started yet',
         'I want to work to make it gender balanced, but I don’t know what to do about it',
-        'I don’t think this is a problem',
+        'I do not think this is a problem',
       ],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox', 'checkbox'],
@@ -423,7 +423,7 @@ const populateDB = async () => {
     {
       name: 'Q028',
       question:
-        'During the preparation of the course, I included in the presentations used at least one concept developed by female researchers?',
+        'During the preparation of the course, I included in the presentations used at least one concept developed by female researchers',
       answers: ['Yes', 'No', 'I do not know'],
       answerInfo: {
         types: ['checkbox', 'checkbox', 'checkbox'],
@@ -548,7 +548,7 @@ const populateDB = async () => {
     {
       name: 'Q037',
       question:
-        'When teaching about a concept, I highlight who coined that concept (i.e. I present a direct link to the students between the concept and the researcher that developed it)?',
+        'When teaching about a concept, I highlight who coined that concept (i.e. I present a direct link to the students between the concept and the researcher that developed it)',
       answers: [
         'Strongly disagree',
         'Disagree',
