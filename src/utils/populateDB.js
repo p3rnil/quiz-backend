@@ -485,7 +485,7 @@ const populateDB = async () => {
     {
       name: 'Q033',
       question:
-        'Female students participate less than male students during the lectures.',
+        'I am aware if female students participate less, more or equally than male students during the lectures',
       answers: [
         'Strongly disagree',
         'Disagree',
@@ -657,7 +657,7 @@ const populateDB = async () => {
       info:
         'You responded that your course is related to Limnology (i.e., courses on Limnology, Ecology, Hydrology, Water Resources, River Restoration, Aquatic Biogeochemistry, etc.). Please, answer the following questions regarding teaching a course related to Limnology. Limnologists are considered those with their main research field in freshwaters.',
       question:
-        'Please, write the names of three MALE limnologists whose research work you use in this course.',
+        'Please, write the names of three MALE limnologists whose research work you use in this course. Please, write their full names separated by commas.',
       answers: [],
       answerInfo: {
         types: ['checkbox-text'],
@@ -669,7 +669,7 @@ const populateDB = async () => {
     {
       name: 'Q046',
       question:
-        'Please, write the names of three FEMALE limnologists whose research work you use in this course.',
+        'Please, write the names of three FEMALE limnologists whose research work you use in this course. Please, write their full names separated by commas.',
       answers: [],
       answerInfo: {
         types: ['checkbox-text'],
