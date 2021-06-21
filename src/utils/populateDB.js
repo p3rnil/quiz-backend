@@ -43,22 +43,21 @@ const populateDB = async () => {
     {
       name: 'Q03',
       question:
-        'Do you belong to any underrepresented minority group in academia? Select all that qualify.',
-      answers: [
-        'Race or ethnic minority',
-        'LGBT + (lesbian, gay, bisexual, trans)',
-        'People with disabilities',
-        '', //MIXTO
-        'None',
-      ],
+        'Do you belong to any underrepresented minority group in academia, such as race/ethnic minority, LGBT+ or people with disabilities? Please, mark NO if you do not belong to any underrepresented minority. Otherwise, indicate to which minority groups do you belong in the text box.',
+      answers: ['No', ''],
       answerInfo: {
-        types: [
-          'checkbox',
-          'checkbox',
-          'checkbox',
-          'checkbox-text',
-          'checkbox',
-        ],
+        types: ['checkbox', 'checkbox-text'],
+        validation: {
+          max: 200,
+        },
+      },
+    },
+    {
+      name: 'Q03.5',
+      question: 'In which country do you work?',
+      answers: [''],
+      answerInfo: {
+        types: ['checkbox-text'],
         validation: {
           max: 200,
         },
@@ -196,16 +195,18 @@ const populateDB = async () => {
     {
       name: 'Q014',
       question:
-        'Which of the following concepts related to gender biases and barriers are you familiar with? Mark as many as needed.',
+        'How many of the following concepts are you familiar with? Concepts list: Matilda effect, Leaky pipeline, Glass-ceiling, Sticky floor, Horizontal segregation, Imposter syndrome, Tokenism, Gender essentialism.',
       answers: [
-        'Matilda effect',
-        'Leaky pipeline',
-        'Glass-ceiling',
-        'Sticky floor',
-        'Horizontal segregation',
-        'Imposter syndrome',
-        'Tokenism',
-        'Gender essentialism',
+        '0 concepts',
+        '1 concept',
+        '2 concepts',
+        '3 concepts',
+        '4 concepts',
+        '5 concepts',
+        '6 concepts',
+        '7 concepts',
+        '8 concepts',
+        '9 concepts',
       ],
       answerInfo: {
         types: [
@@ -217,8 +218,10 @@ const populateDB = async () => {
           'checkbox',
           'checkbox',
           'checkbox',
+          'checkbox',
+          'checkbox',
         ],
-        points: [25, 25, 25, 25, 25, 25, 25, 25],
+        points: [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],
       },
     },
     {
