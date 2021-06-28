@@ -106,7 +106,7 @@ const getNextQuestion = async (req, res) => {
       (answer ===
         'I do not wish to participate in the study but I want to take the self-assessment questionnaire')
     ) {
-      result = questionArray[7]
+      result = questionArray[8]
       found = true
     }
 
