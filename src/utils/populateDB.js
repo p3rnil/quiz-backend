@@ -699,38 +699,38 @@ const populateDB = async () => {
 
   await models.Question.findOneAndUpdate(
     { name: 'Q013' },
-    { dependencyQuestion: questionsMongo[12], dependencyAnswer: 'Yes' }
+    { dependencyQuestion: questionsMongo[13], dependencyAnswer: 'Yes' }
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q016' },
-    { dependencyQuestion: questionsMongo[15], dependencyAnswer: 'No' }
+    { dependencyQuestion: questionsMongo[16], dependencyAnswer: 'No' }
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q019' },
-    { dependencyQuestion: questionsMongo[17], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1 17
+    { dependencyQuestion: questionsMongo[18], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1 17
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q020' },
-    { dependencyQuestion: questionsMongo[17], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1
+    { dependencyQuestion: questionsMongo[18], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q021' },
-    { dependencyQuestion: questionsMongo[17], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1
+    { dependencyQuestion: questionsMongo[18], dependencyAnswer: '1>' } //PREGUNTAR DEBE SER MAYOR QUE 1
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q024' },
-    { dependencyQuestion: questionsMongo[23], dependencyAnswer: 'No' }
+    { dependencyQuestion: questionsMongo[24], dependencyAnswer: 'No' }
   )
 
   await models.Question.findOneAndUpdate(
     { name: 'Q042' },
     {
-      dependencyQuestion: questionsMongo[41],
+      dependencyQuestion: questionsMongo[42],
       dependencyAnswer: 'We use a different system',
     }
   )
@@ -738,7 +738,7 @@ const populateDB = async () => {
   await models.Question.findOneAndUpdate(
     { name: 'Q045' },
     {
-      dependencyQuestion: questionsMongo[8],
+      dependencyQuestion: questionsMongo[9],
       dependencyAnswer: 'Yes',
     }
   )
@@ -746,7 +746,7 @@ const populateDB = async () => {
   await models.Question.findOneAndUpdate(
     { name: 'Q046' },
     {
-      dependencyQuestion: questionsMongo[8],
+      dependencyQuestion: questionsMongo[9],
       dependencyAnswer: 'Yes',
     }
   )
