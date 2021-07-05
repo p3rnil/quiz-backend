@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./src/index.js",
+    "devWin": "SET SECRET=prod& SET NODE_ENV=prod& nodemon src/index.js",
+    "dev": "SECRET=dev NODE_ENV=dev nodemon ./src/index.js",
+    "prod": "SECRET=prod NODE_ENV=prod node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,7 +15,10 @@
     "prettier": "2.2.1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.11.18"
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.11.19"
   }
 }

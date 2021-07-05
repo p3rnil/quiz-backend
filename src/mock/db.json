@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "nombre": "Quiz primerito",
+      "questions": [
+        {
+          "questionA": {
+            "id": 0,
+            "type": "checkbox",
+            "question": "Cuanto es 2 + 1?",
+            "answers": ["3", "1", "2", "4"]
+          }
+        },
+        {
+          "questionB": {
+            "id": 1,
+            "type": "checkbox",
+            "question": "Perfecto! Ahora una más difícil! Cuanto es 3 + 2?",
+            "answers": ["1", "2", "3", "5"],
+            "dependency": {
+              "id": 0,
+              "answer": "3"
+            }
+          }
+        },
+        {
+          "questionC": {
+            "id": 2,
+            "type": "textbox",
+            "question": "Explicame que tal tu día?",
+            "answers": []
+          }
+        },
+        {
+          "questionD": {
+            "id": 3,
+            "type": "checkbox",
+            "question": "Blanco o negro ?",
+            "answers": ["Blanco", "Negro"]
+          }
+        },
+        {
+          "questionE": {
+            "id": 4,
+            "type": "checkbox",
+            "question": "Eres un cr@ck! Y esta -1 + 1?",
+            "answers": ["0", "1", "2", "3"],
+            "dependency": {
+              "id": 1,
+              "answer": "5"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
