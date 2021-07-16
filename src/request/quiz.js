@@ -11,8 +11,11 @@ const getTotalPoints = async (req, res) => {
     const history = await models.History.findOne({
       token: req.headers.authorization,
     })
-
-    res.send({ total_points: history.total_points })
+    if (history) {
+      res.send({ total_points: history.total_points })
+    } else {
+      res.send({ total_points: 0 })
+    }
   } catch (error) {
     res.status(500).send(error.message)
   }
